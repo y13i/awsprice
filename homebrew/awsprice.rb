@@ -6,7 +6,7 @@ class Awsprice < Formula
   homepage "https://github.com/y13i/awsprice"
   version  VERSION
   url      "https://github.com/y13i/awsprice/releases/download/v#{VERSION}/awsprice-darwin_amd64.tar.gz"
-  sha256   "d1621b5b7c160da47c216e77c1bc066ba9591de78eb79ddc4441330bbceb6f80"
+  sha256   "80d322b0bacfbc106735021e38075e222dee80d1951f9f570858e268d41bc272"
 
   head "https://github.com/y13i/awsprice.git", :branch => "master"
 
