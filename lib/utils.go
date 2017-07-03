@@ -192,11 +192,15 @@ func stringsToProductFamilies(ss []string) []ProductFamily {
 	return pfs
 }
 
-func stringsToAttributes(ss []string) Attributes {
+func stringsToAttributes(ss []string) (Attributes, error) {
 	as := Attributes{}
 
 	for _, s := range ss {
 		ps := strings.Split(s, "=")
+
+		if len(ps) < 2 {
+			return as, errors.New("attribute must be form of `KEY=[VALUE]`")
+		}
 
 		k := ps[0]
 		v := ps[1]
@@ -204,5 +208,5 @@ func stringsToAttributes(ss []string) Attributes {
 		as[AttributeKey(k)] = AttributeValue(v)
 	}
 
-	return as
+	return as, nil
 }

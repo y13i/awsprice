@@ -19,12 +19,18 @@ func listAttributes() cli.Command {
 		},
 
 		Action: func(c *cli.Context) error {
+			as, e := stringsToAttributes(c.StringSlice("attribute"))
+
+			if e != nil {
+				return e
+			}
+
 			ps, e := getProductSlice(
 				OfferCode(c.String("offerCode")),
 				RegionCode(c.String("region")),
 				Version(c.String("offerVersion")),
 				stringsToProductFamilies(c.StringSlice("productFamily")),
-				stringsToAttributes(c.StringSlice("attribute")),
+				as,
 			)
 
 			if e != nil {
