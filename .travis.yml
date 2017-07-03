@@ -11,7 +11,7 @@ before_deploy:
 - go get -v github.com/mitchellh/gox
 - gox -output build/{{.OS}}_{{.Arch}}/{{.Dir}}
 - cd build
-- for osarch in * ; do cd $osarch && zip -r ../awsprice-$osarch.zip . && cd ../ ;
+- for osarch in * ; do cd $osarch && tar cvzf ../awsprice-$osarch.tar.gz . && cd ../ ;
   done
 - cd ../
 deploy:
@@ -20,21 +20,21 @@ deploy:
   api_key:
     secure: EaAJXIiRJON1gHUvD0dOPK0939ukekTvEs/D2xUSvXFa0ngtahuBW5Jgai0ofVMl8q/p0Ld53UaRCH9dOJfvW3M6G7QdrO+eNlRJXHG/JdOPADPZhoiRo4Qd9MTG5XA+lPVZhs8HYfZq7tYsRR7AiMVKm9UIHNk+8j7tOr/GPVBEEiMhCQmfH7AWIIEQJ/SGXzQxjTrhd31bC4uilxO9BkUA+3XFI9vHezxLgf+hchuWs4kFvX8nOvrRkUxq/zFtEjTnshs9h7Xhd4/Hfq2oxZgzIi5D2gnN/+1+1b047aF3Za7enr7yKpWxdm0ifY2CmPWo1tg4iBZlILj0PyuXgljvm/F33og2V2/Eq91Oo4z9yXPVo7C2GD5uytFiedynj89AeE93jw6RaunDicZ+f7+2FEMkYdn/6M6U6+YsKkKpt11IoIp8F8MOZ6CtSiwMeB4YpA0wbJbZTAWSEKe91FOGcKARtOqCZckBDicYRG0biIiyHIGUMNwXo7iijL3Sepss9X3fnsJxEr2pQ5GsZ8+/sOji88SV1Pin9dMNnfKupzZwWJz+66/obD+UpIFZdWYgXRNziWs7eAOWWlwhrlztu65+r4Vu+z0crQ7uPSWD+tEeYWYoBDXptfThsgfbeehrrOT1QwsdSfAPpeccnj+V+QVLZrScqUTpCBusGSw=
   file:
-  - build/awsprice-darwin_386.zip
-  - build/awsprice-darwin_amd64.zip
-  - build/awsprice-freebsd_386.zip
-  - build/awsprice-freebsd_amd64.zip
-  - build/awsprice-freebsd_arm.zip
-  - build/awsprice-linux_386.zip
-  - build/awsprice-linux_amd64.zip
-  - build/awsprice-linux_arm.zip
-  - build/awsprice-netbsd_386.zip
-  - build/awsprice-netbsd_amd64.zip
-  - build/awsprice-netbsd_arm.zip
-  - build/awsprice-openbsd_386.zip
-  - build/awsprice-openbsd_amd64.zip
-  - build/awsprice-windows_386.zip
-  - build/awsprice-windows_amd64.zip
+  - build/awsprice-darwin_386.tar.gz
+  - build/awsprice-darwin_amd64.tar.gz
+  - build/awsprice-freebsd_386.tar.gz
+  - build/awsprice-freebsd_amd64.tar.gz
+  - build/awsprice-freebsd_arm.tar.gz
+  - build/awsprice-linux_386.tar.gz
+  - build/awsprice-linux_amd64.tar.gz
+  - build/awsprice-linux_arm.tar.gz
+  - build/awsprice-netbsd_386.tar.gz
+  - build/awsprice-netbsd_amd64.tar.gz
+  - build/awsprice-netbsd_arm.tar.gz
+  - build/awsprice-openbsd_386.tar.gz
+  - build/awsprice-openbsd_amd64.tar.gz
+  - build/awsprice-windows_386.tar.gz
+  - build/awsprice-windows_amd64.tar.gz
   on:
     repo: y13i/awsprice
     tags: true
