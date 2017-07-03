@@ -368,6 +368,18 @@ $ awsprice listProductTerms -a "instanceType=c4.2xlarge" -a "operatingSystem=Lin
 
 価格の単位を指定します。現状特に意味はないです。
 
+###### `--termAttribute value, -t value`
+
+価格情報を価格情報の属性（`termAttribute`）で絞り込みます。
+
+Filter terms by the term attribute in `KEY=[VALUE]` format.
+
+複数指定可。
+
+```
+-t attribute1=value1 -t attribute2= -t ...
+```
+
 #### `help, h`
 
 ヘルプを表示します。

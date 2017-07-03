@@ -141,7 +141,7 @@ Accept multiple values.
 
 ###### `--attribute value, -a value`
 
-Filter products by the attribute in `KEY[=VALUE]` format.
+Filter products by the attribute in `KEY=[VALUE]` format.
 
 Accept multiple values.
 
@@ -365,6 +365,16 @@ Type of the terms. "OnDemand" or "Reserved".
 Unit of prices.
 
 Not used. Currently.
+
+###### `--termAttribute value, -t value`
+
+Filter terms by the term attribute in `KEY=[VALUE]` format.
+
+Accept multiple values.
+
+```
+-t attribute1=value1 -t attribute2= -t ...
+```
 
 #### `help, h`
 
