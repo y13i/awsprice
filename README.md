@@ -2,6 +2,8 @@
 
 CLI for [AWS Price List API](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/price-changes.html).
 
+[日本語 README](README.ja.md)
+
 ## Installation
 
 Download binary from [releases](https://github.com/y13i/awsprice/releases).
@@ -24,7 +26,7 @@ $ awsprice [global options] command [command options] [arguments...]
 
 #### `listOffers`
 
-list all offer codes
+List all offer codes.
 
 ```
 $ awsprice listOffers | head -10
@@ -42,7 +44,7 @@ $ awsprice listOffers | head -10
 
 #### `listOfferRegions`
 
-list all regions of specified offer (note: `--offerCode` defaults to `AmazonEC2`)
+List all regions of specified offer. (note: `--offerCode` defaults to `AmazonEC2`)
 
 ```
 $ awsprice listOfferRegions | head -5
@@ -66,11 +68,11 @@ $ awsprice listOfferRegions --offerCode AmazonLex
 
 (default: `AmazonEC2`)
 
-A unique code for the product of an AWS service
+A unique code for the product of an AWS service.
 
 #### `listOfferVersions`
 
-list all versions of specified offer
+List all versions of specified offer.
 
 ```
 $ awsprice listOfferVersions | head -10
@@ -92,7 +94,7 @@ $ awsprice listOfferVersions | head -10
 
 #### `listProductFamilies`
 
-list product families of the offer products
+List product families of the offer products.
 
 ```
 $ awsprice listProductFamilies
@@ -123,21 +125,33 @@ AWS region code. If nvironment variable `$AWS_REGION` is set, it will be used as
 
 (default: current version)
 
-the version of the offer file
+The version of the offer file.
 
 Example: `20170302183221`
 
 ###### `--productFamily value, -p value`
 
-filter products by the name of product family
+Filter products by the name of product family.
+
+Accept multiple values.
+
+```
+-p familyName1 -p familyName2
+```
 
 ###### `--attribute value, -a value`
 
-filter products by the attribute in "KEY[=VALUE]" format
+Filter products by the attribute in `KEY[=VALUE]` format.
+
+Accept multiple values.
+
+```
+-a attribute1=value1 -a attribute2= -a ...
+```
 
 #### `listAttributes`
 
-list attributes of the offer products
+List attributes of the offer products.
 
 ```
 $ awsprice listAttributes | head -10
@@ -181,7 +195,7 @@ $ awsprice listAttributes -o AmazonRoute53 -r "" | head -10
 
 #### `listProducts`
 
-list products match given filters
+List products match given filters.
 
 ```
 $ awsprice listProducts -p "Compute Instance" -a "instanceType=t2.micro" -a "operatingSystem=Linux" -a "tenancy=Shared"
@@ -230,7 +244,7 @@ $ awsprice listProducts -p "Compute Instance" -a "instanceType=t2.micro" -a "ope
 
 #### `listTermTypes`
 
-list term types
+List term types.
 
 ```
 $ awsprice listTermTypes
@@ -265,7 +279,7 @@ $ awsprice listTermTypes -o AmazonS3
 
 #### `listProductTerms`
 
-list offer terms of products match given filters
+List offer terms of products match given filters.
 
 ```
 $ awsprice listProductTerms -a "instanceType=c4.2xlarge" -a "operatingSystem=Linux" -a "tenancy=Shared"
@@ -342,19 +356,25 @@ $ awsprice listProductTerms -a "instanceType=c4.2xlarge" -a "operatingSystem=Lin
 
 (default: `OnDemand`)
 
-type of the terms. "OnDemand" or "Reserved"
+Type of the terms. "OnDemand" or "Reserved".
 
 ###### `--priceUnit value`
 
 (default: `USD`)
 
-unit of prices
+Unit of prices.
 
-not used. currently.
+Not used. Currently.
 
 #### `help, h`
 
-Shows a list of commands or help for one command
+Shows a list of commands or help for one command.
+
+To view subcommand usage...
+
+```
+$ awsprice help [command name]
+```
 
 ### Global Options
 
@@ -362,22 +382,22 @@ Shows a list of commands or help for one command
 
 (default: `pp`)
 
-output format ("pp" or "json")
+Output format. ("pp" or "json")
 
 #### `--cacheTTL value`
 
 (default: `24h`)
 
-max age of cache. if existing cache file is older than this value, cache will be recreated. using [`time.ParseDuration(s string)`](https://golang.org/pkg/time/#ParseDuration)
+Max age of cache. If existing cache file is older than this value, cache will be recreated. using [`time.ParseDuration(s string)`](https://golang.org/pkg/time/#ParseDuration).
 
 #### `--clearCache`
 
-remove all cache files before exiting
+Remove all cache files before exiting.
 
 #### `--help, -h`
 
-show help
+Show help.
 
 #### `--version, -v`
 
-print the version
+Print the version.
