@@ -358,7 +358,7 @@ Shows a list of commands or help for one command
 
 ### Global Options
 
-### `--format value, -f value`
+#### `--format value, -f value`
 
 (default: `pp`)
 
