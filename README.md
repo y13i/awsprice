@@ -117,7 +117,7 @@ $ awsprice listProductFamilies
 
 ###### `--region value, -r value`
 
-AWS region code. If nvironment variable [$AWS_REGION] is set, it will used as this option value
+AWS region code. If nvironment variable `$AWS_REGION` is set, it will be used as this option value
 
 ###### `--offerVersion value`
 
