@@ -2,3 +2,4 @@
 .envrc
 vendor/
 _vendor-*
+build/
