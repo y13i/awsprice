@@ -62,22 +62,13 @@ type Unit string
 // example: "AmazonEC2"
 type OfferCode string
 
-// OfferCodes - slice of OfferCode
-type OfferCodes []OfferCode
-
 // Version - The version of the offer file
 // An attribute that tracks the version of the offer file. Each time a new file is published, it contains a new version number. For example, 20150409T022205 and 20150910T182105.
 // example: "20170605233259"
 type Version string
 
-// VersionSlice - slice of Version
-type VersionSlice []Version
-
 // RegionCode - example "us-east-1"
 type RegionCode string
-
-// RegionCodes - slice of RegionCode
-type RegionCodes []RegionCode
 
 // AttributeKey - example "instanceType"
 type AttributeKey string

@@ -22,7 +22,7 @@ func listOfferRegions() cli.Command {
 				return e
 			}
 
-			rcs := RegionCodes{}
+			rcs := []RegionCode{}
 
 			for k := range ori.Regions {
 				rcs = append(rcs, k)

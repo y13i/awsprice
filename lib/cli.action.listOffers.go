@@ -17,7 +17,7 @@ func listOffers() cli.Command {
 				return e
 			}
 
-			var ocs OfferCodes
+			ocs := []OfferCode{}
 
 			for k := range oi.Offers {
 				ocs = append(ocs, k)

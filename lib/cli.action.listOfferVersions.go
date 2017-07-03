@@ -22,7 +22,7 @@ func listOfferVersions() cli.Command {
 				return e
 			}
 
-			vs := VersionSlice{}
+			vs := []Version{}
 
 			for k := range ovi.Versions {
 				vs = append(vs, k)
