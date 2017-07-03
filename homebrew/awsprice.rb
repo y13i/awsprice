@@ -1,6 +1,6 @@
 require "formula"
 
-class AWSPrice < Formula
+class Awsprice < Formula
   VERSION = "0.0.1"
 
   homepage "https://github.com/y13i/awsprice"

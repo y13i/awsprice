@@ -11,7 +11,7 @@ Put it into your `$PATH`.
 ### Homebrew
 
 ```
-$ brew install https://raw.githubusercontent.com/y13i/awsprice/master/homebrew.rb
+$ brew install https://raw.githubusercontent.com/y13i/awsprice/master/homebrew/awsprice.rb
 ```
 
 ## Usage
