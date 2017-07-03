@@ -1,0 +1,45 @@
+{
+    "memo": "e8c25d0b81cfa66330eb50e0c08196bde70df603b6444d8cb64eb208fcc91403",
+    "projects": [
+        {
+            "name": "github.com/k0kubun/pp",
+            "version": "v2.3.0",
+            "revision": "027a6d1765d673d337e687394dbe780dd64e2a1e",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/mattn/go-colorable",
+            "version": "v0.0.8",
+            "revision": "941b50ebc6efddf4c41c8e4537a5f68a4e686b24",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/mattn/go-isatty",
+            "version": "v0.0.2",
+            "revision": "fc9e8d8ef48496124e79ae0df75490096eccf6fe",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/urfave/cli",
+            "version": "v1.19.1",
+            "revision": "0bdeddeeb0f650497d603c4ad7b20cfe685682f6",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "golang.org/x/sys",
+            "branch": "master",
+            "revision": "f7928cfef4d09d1b080aa2b6fd3ca9ba1567c733",
+            "packages": [
+                "unix"
+            ]
+        }
+    ]
+}
