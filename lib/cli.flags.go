@@ -5,11 +5,13 @@ import "github.com/urfave/cli"
 var flags = map[string]cli.Flag{
 	"offerCode": cli.StringFlag{
 		Name:  "offerCode, o",
+		Usage: "A unique code for the product of an AWS service",
 		Value: "AmazonEC2",
 	},
 
 	"region": cli.StringFlag{
 		Name:   "region, r",
+		Usage:  "AWS region code",
 		EnvVar: "AWS_REGION",
 	},
 
@@ -44,8 +46,8 @@ var flags = map[string]cli.Flag{
 var globalFlags = []cli.Flag{
 	cli.StringFlag{
 		Name:  "cacheTTL",
-		Value: "24h",
 		Usage: "max age of cache. if existing cache file is older than this value, cache will be recreated. using time.ParseDuration(s string)",
+		Value: "24h",
 	},
 
 	cli.StringFlag{
