@@ -5,7 +5,7 @@ import "github.com/urfave/cli"
 // ProductTerm conbines Product and OfferTerms
 type ProductTerm struct {
 	Product    Product
-	OfferTerms OfferTerms
+	OfferTerms []OfferTerm
 }
 
 func listProductTerms() cli.Command {
@@ -21,10 +21,12 @@ func listProductTerms() cli.Command {
 			flags["attribute"],
 			flags["termType"],
 			flags["priceUnit"],
+			flags["termAttribute"],
 		},
 
 		Action: func(c *cli.Context) error {
 			as, e := stringsToAttributes(c.StringSlice("attribute"))
+			tam, e := stringsToTermAttributes(c.StringSlice("termAttribute"))
 
 			if e != nil {
 				return e
@@ -57,9 +59,15 @@ func listProductTerms() cli.Command {
 			pts := []ProductTerm{}
 
 			for _, p := range ps {
+				ots := filterOfferTerms(ptm[p.SKU], tam)
+
+				if len(ots) == 0 {
+					continue
+				}
+
 				productPrice := ProductTerm{
 					Product:    p,
-					OfferTerms: ptm[p.SKU],
+					OfferTerms: ots,
 				}
 
 				pts = append(pts, productPrice)

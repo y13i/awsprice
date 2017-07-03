@@ -210,3 +210,47 @@ func stringsToAttributes(ss []string) (Attributes, error) {
 
 	return as, nil
 }
+
+func stringsToTermAttributes(ss []string) (TermAttributes, error) {
+	tas := TermAttributes{}
+
+	for _, s := range ss {
+		ps := strings.Split(s, "=")
+
+		if len(ps) < 2 {
+			return tas, errors.New("term attribute must be form of `KEY=[VALUE]`")
+		}
+
+		k := ps[0]
+		v := ps[1]
+
+		tas[TermAttributeKey(k)] = TermAttributeValue(v)
+	}
+
+	return tas, nil
+}
+
+func filterOfferTerms(otm OfferTerms, tam TermAttributes) []OfferTerm {
+	ots := []OfferTerm{}
+
+EachOfferTerm:
+	for _, ot := range otm {
+		if len(tam) > 0 {
+			for ak, av := range tam {
+				tav, ok := ot.TermAttributes[ak]
+
+				if !ok {
+					continue EachOfferTerm
+				}
+
+				if tav != "" && av != tav {
+					continue EachOfferTerm
+				}
+			}
+		}
+
+		ots = append(ots, ot)
+	}
+
+	return ots
+}

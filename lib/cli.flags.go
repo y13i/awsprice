@@ -41,6 +41,11 @@ var flags = map[string]cli.Flag{
 		Usage: "unit of prices",
 		Value: "USD",
 	},
+
+	"termAttribute": cli.StringSliceFlag{
+		Name:  "termAttribute, t",
+		Usage: "filter products by the term attribute in \"KEY[=VALUE]\" format",
+	},
 }
 
 var globalFlags = []cli.Flag{

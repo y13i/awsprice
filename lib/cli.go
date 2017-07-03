@@ -11,7 +11,7 @@ func GetCLIApp() *cli.App {
 
 	app.Name = "awsprice"
 	app.Usage = "CLI for AWS Price List API."
-	app.Version = "0.0.2"
+	app.Version = "0.0.3"
 	app.EnableBashCompletion = true
 	app.Flags = globalFlags
 
