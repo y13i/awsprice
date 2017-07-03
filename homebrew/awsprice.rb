@@ -1,7 +1,7 @@
 require "formula"
 
 class Awsprice < Formula
-  VERSION = "0.0.1"
+  VERSION = "0.0.2"
 
   homepage "https://github.com/y13i/awsprice"
   version  VERSION
