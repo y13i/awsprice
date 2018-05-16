@@ -1,6 +1,6 @@
 # awsprice
 
-[AWS Price List API](http://docs.aws.amazon.com/ja_jp/awsaccountbilling/latest/aboutv2/price-changes.html) 用のコマンドラインインターフェイスです。
+[AWS Price List Bulk API](https://docs.aws.amazon.com/ja_jp/awsaccountbilling/latest/aboutv2/using-ppslong.html) 用のコマンドラインインターフェイスです。
 
 ## インストール
 
@@ -354,7 +354,6 @@ $ awsprice listProductTerms -a "instanceType=c4.2xlarge" -a "operatingSystem=Lin
 ###### `--productFamily value, -p value`
 
 ###### `--attribute value, -a value`
-
 
 ###### `--termType value`
 
