@@ -3,49 +3,67 @@
 
 [[projects]]
   branch = "master"
+  digest = "1:9322085543ac468e014c3cb52415e00b7e0e7191549a07d85b95aaaa3cfcc067"
   name = "github.com/bradfitz/slice"
   packages = ["."]
+  pruneopts = ""
   revision = "d9036e2120b5ddfa53f3ebccd618c4af275f47da"
 
 [[projects]]
+  digest = "1:01228049049d301adb9fe2a35683db8ec9d20419aac36b5cc48e92c5d05444c3"
   name = "github.com/k0kubun/pp"
   packages = ["."]
+  pruneopts = ""
   revision = "027a6d1765d673d337e687394dbe780dd64e2a1e"
   version = "v2.3.0"
 
 [[projects]]
+  digest = "1:1ecc5702613ec7fcd1304f03e7ea03239bcb2058a7e752ef2ee2bceac00237d0"
   name = "github.com/mattn/go-colorable"
   packages = ["."]
+  pruneopts = ""
   revision = "941b50ebc6efddf4c41c8e4537a5f68a4e686b24"
   version = "v0.0.8"
 
 [[projects]]
+  digest = "1:420bb8eabfa6dff0cb5c8e786489a420e7e9d93a8b1d83882cce70c5a5b9bc3e"
   name = "github.com/mattn/go-isatty"
   packages = ["."]
+  pruneopts = ""
   revision = "fc9e8d8ef48496124e79ae0df75490096eccf6fe"
   version = "v0.0.2"
 
 [[projects]]
+  digest = "1:6cd26dec5142a0e6a6bf8931df56b706cb643bf7f91fb3a064792f07fea94704"
   name = "github.com/urfave/cli"
   packages = ["."]
+  pruneopts = ""
   revision = "0bdeddeeb0f650497d603c4ad7b20cfe685682f6"
   version = "v1.19.1"
 
 [[projects]]
   branch = "master"
+  digest = "1:3645b183b30c6d3eccb4d2bf80e0bae5cbe247df7e3283588774bfde6502bd03"
   name = "go4.org"
   packages = ["reflectutil"]
+  pruneopts = ""
   revision = "034d17a462f7b2dcd1a4a73553ec5357ff6e6c6e"
 
 [[projects]]
   branch = "master"
+  digest = "1:26fd03abac965fe00dcfc6a763d4ed1b444fd31fc4b3e7a96933964dc6efec8d"
   name = "golang.org/x/sys"
   packages = ["unix"]
+  pruneopts = ""
   revision = "0e0164865330d5cf1c00247be08330bf96e2f87c"
 
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "335639d2f3925af029b8c792954e701c39be76a2150aea0f81f45127442dde0e"
+  input-imports = [
+    "github.com/bradfitz/slice",
+    "github.com/k0kubun/pp",
+    "github.com/urfave/cli",
+  ]
   solver-name = "gps-cdcl"
   solver-version = 1
